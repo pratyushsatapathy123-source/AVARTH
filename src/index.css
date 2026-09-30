@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-headline: 'Be Vietnam Pro', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-telemetry: 'Metrophobic', monospace, sans-serif;
+  }
+
+  body {
+    background-color: #141312;
+    color: #ede8e0;
+    font-family: var(--font-body);
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom font utilities matching Stitch specification */
+.font-headline-lg { font-family: var(--font-headline); font-size: 28px; line-height: 32px; letter-spacing: -0.02em; font-weight: 500; }
+.font-headline-md { font-family: var(--font-headline); font-size: 22px; line-height: 26px; letter-spacing: -0.015em; font-weight: 500; }
+.font-headline-sm { font-family: var(--font-headline); font-size: 18px; line-height: 22px; letter-spacing: -0.01em; font-weight: 600; }
+.font-title-md { font-family: var(--font-body); font-size: 15px; line-height: 20px; letter-spacing: -0.01em; font-weight: 600; }
+.font-body-lg { font-family: var(--font-body); font-size: 15px; line-height: 22px; font-weight: 400; }
+.font-body-md { font-family: var(--font-body); font-size: 13px; line-height: 18px; font-weight: 400; }
+.font-body-sm { font-family: var(--font-body); font-size: 11px; line-height: 16px; font-weight: 400; }
+.font-label-serif-lg { font-family: var(--font-telemetry); font-size: 13px; line-height: 16px; letter-spacing: 0.02em; font-weight: 500; }
+.font-label-serif-md { font-family: var(--font-telemetry); font-size: 11px; line-height: 14px; letter-spacing: 0.05em; font-weight: 500; }
+.font-label-serif-caps { font-family: var(--font-telemetry); font-size: 9px; line-height: 12px; letter-spacing: 0.14em; font-weight: 700; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1816;
+}
+::-webkit-scrollbar-thumb {
+  background: #332e29;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b74a32;
+}
+
+/* Animations */
+@keyframes coneBreath {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 0.55; }
+}
+
+@keyframes isohyetAssimilation {
+  0%, 100% { stroke-opacity: 0.5; stroke-dashoffset: 0; }
+  50% { stroke-opacity: 0.28; stroke-dashoffset: 12; }
+}
+
+@keyframes surgePulseShimmer {
+  0%, 100% { fill-opacity: 0.5; stroke-opacity: 1; }
+  50% { fill-opacity: 0.35; stroke-opacity: 0.75; }
+}
+
+@keyframes criticalAssetPulse {
+  0% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.6); opacity: 0.25; }
+  100% { transform: scale(1); opacity: 0.85; }
+}
+
+.anim-cone-breath {
+  animation: coneBreath 6s ease-in-out infinite;
+}
+
+.anim-isohyet {
+  animation: isohyetAssimilation 5s ease-in-out infinite;
+}
+
+.anim-surge-polygon {
+  animation: surgePulseShimmer 4s ease-in-out infinite;
+}
+
+.asset-ping-ring {
+  transform-origin: center;
+  animation: criticalAssetPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.map-layer {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.layer-hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
